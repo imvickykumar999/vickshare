@@ -1,5 +1,5 @@
-# [News Website](https://github.com/imvickykumar999/Flask-Image-Upload/blob/main/templates/upload.html)
+# [Share Files](https://github.com/imvickykumar999/vickshare/blob/11659f06973cfa0fbbf9a4da8afe27aa3e241e61/app.py#L93)
 
-## Run `heroku logs -t -a vickshare` in CMD to check errors in [deployed site](https://vicksnews.herokuapp.com/news).
+## Run `heroku logs -t -a vickshare` in CMD to check errors in [deployed site](https://vickshare.herokuapp.com/share).
 
-[![app.py](uploadss.png)](https://github.com/imvickykumar999/Flask-Image-Upload/blob/main/templates/gallery.html)
+[![app.py](uploadss.png)](https://github.com/imvickykumar999/vickshare/blob/11659f06973cfa0fbbf9a4da8afe27aa3e241e61/templates/share.html#L23)
