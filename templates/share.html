@@ -1,0 +1,67 @@
+{% extends "base.html"%}
+{% block content %}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <!-- <link rel="stylesheet" href="../css/index.css"> -->
+
+		<title>Python Flask Multiple Files Upload Example</title>
+</head>
+<body>
+
+  <div class="jumbotron">
+    <div class="container">
+
+			<div class="alert alert-primary" role="alert">
+				<h2>Select file to Share...</h2>
+			</div>
+			<br>
+			<div class="alert alert-danger" role="alert">
+	      <h4>ALLOWED_EXTENSIONS = 'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'</h4>
+	    </div>
+
+			<p>
+				{% with messages = get_flashed_messages() %}
+				  {% if messages %}
+
+					<ul class=flashes>
+					{% for message in messages %}
+					  <li>{{ message }}</li>
+					{% endfor %}
+					</ul>
+
+				  {% endif %}
+				{% endwith %}
+			</p>
+
+			<form method="post" action="/" enctype="multipart/form-data">
+
+				<div class="alert alert-warning" role="alert">
+					<strong>Enter Password: </strong>
+					<input type="password" name="unique"/>
+        </div>
+				<br><br>
+
+			    <dl>
+						<p>
+							<div class="alert alert-info" role="alert">
+								<input type="file" name="files[]" multiple="true" autocomplete="off" required>
+	            </div>
+						</p>
+			    </dl>
+
+			    <p>
+						<div class="alert alert-primary" role="alert">
+							<input type="submit" value="Submit">
+            </div>
+					</p>
+			</form>
+
+		</div>
+	</div>
+</body>
+
+{% endblock %}
