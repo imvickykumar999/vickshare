@@ -1,5 +1,5 @@
 
-import requests, os, clipboard
+import requests, os, pyperclip
 from bs4 import BeautifulSoup as bs
 from werkzeug.utils import secure_filename
 from encrypt import encryptpdf as enc, imgtopdf as imf
@@ -81,7 +81,7 @@ def convert_morse():
         convert(test_list)
         text = ''.join(decrypt)
 
-    clipboard.copy(text)
+    pyperclip.copy(text)
     flash(f'Note: Output of {test} is copied in clipboard !!!')
     return render_template('morse.html', text = text)
 
@@ -115,7 +115,7 @@ def upload_file():
                         pass
         # return render_template('complete.html', aloc=aloc)
 
-        clipboard.copy(loc)
+        pyperclip.copy(loc)
         flash(f'{loc} is copied in clipboard !!!')
         return redirect(f'/{loc}')
 
