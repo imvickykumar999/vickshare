@@ -14,52 +14,58 @@
 
   <div class="jumbotron">
     <div class="container">
+      <center>
+  			<div class="alert alert-danger" role="alert">
+  				<h2>Select file to Share... <br>(Note: Refesh page after submit to get Shareable link)</h2>
+  			</div>
+  			<br>
 
-			<div class="alert alert-primary" role="alert">
-				<h2>Select file to Share...</h2>
-			</div>
-			<br>
-			<div class="alert alert-danger" role="alert">
-	      <h4>ALLOWED_EXTENSIONS = 'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'</h4>
-	    </div>
+  			<p>
+  				{% with messages = get_flashed_messages() %}
+  				  {% if messages %}
 
-			<p>
-				{% with messages = get_flashed_messages() %}
-				  {% if messages %}
+  					<ul class=flashes>
+  					{% for message in messages %}
+  					  <li>
+                <div class="alert alert-danger" role="alert">
+                  <h3>{{ message }}</h3>
+  	            </div>
+              </li>
+  					{% endfor %}
+  					</ul>
 
-					<ul class=flashes>
-					{% for message in messages %}
-					  <li>{{ message }}</li>
-					{% endfor %}
-					</ul>
+  				  {% endif %}
+  				{% endwith %}
+  			</p>
 
-				  {% endif %}
-				{% endwith %}
-			</p>
+        <div class="alert alert-info" role="alert">
+  	      <h4>ALLOWED_EXTENSIONS = 'txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'</h4>
+  	    </div>
 
-			<form method="post" action="/" enctype="multipart/form-data">
+  			<form method="post" action="/" enctype="multipart/form-data">
 
-				<div class="alert alert-warning" role="alert">
-					<strong>Set Password: </strong>
-					<input type="password" name="unique"/>
-        </div>
-				<br><br>
+  				<div class="alert alert-warning" role="alert">
+  					<strong>Set Password: </strong>
+  					<input type="password" name="unique"/>
+          </div>
+  				<br>
 
-			    <dl>
-						<p>
-							<div class="alert alert-info" role="alert">
-								<input type="file" name="files[]" multiple="true" autocomplete="off" required>
-	            </div>
-						</p>
-			    </dl>
+  			    <dl>
+  						<p>
+  							<div class="alert alert-info" role="alert">
+  								<input type="file" name="files[]" multiple="true" autocomplete="off" required>
+  	            </div>
+  						</p>
+  			    </dl>
 
-			    <p>
-						<div class="alert alert-primary" role="alert">
-							<input type="submit" value="Submit">
-            </div>
-					</p>
-			</form>
+  			    <p>
+  						<div class="alert alert-danger" role="alert">
+  							<input type="submit" value="Submit">
+              </div>
+  					</p>
+  			</form>
 
+      </center>
 		</div>
 	</div>
 </body>
